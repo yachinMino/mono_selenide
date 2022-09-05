@@ -12,7 +12,7 @@ import com.codeborne.selenide.Configuration;
 public class UserInfoTest {
 
     /** 接続パスを設定する **/
-    private static final String URL = "http://127.0.0.1:5173/";
+    private static final String URL = "http://192.168.96.1/";
 
     @Before
     public void before() {
