@@ -1,18 +1,18 @@
 package jp.mono_selenide;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.*;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
 import com.codeborne.selenide.Configuration;
 
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.*;
+
 public class UserInfoTest {
 
     /** 接続パスを設定する **/
-    private static final String URL = "http://192.168.96.1/";
+    private static final String URL = "http://host.docker.internal:5172/";
 
     @Before
     public void before() {
