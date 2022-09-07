@@ -18,9 +18,8 @@ public class UserInfoTest {
     @Before
     public void before() {
         System.setProperty("selenide.browser", "chrome");
-        // Configuration.headless = true;
         // タイムアウト時間を設定する（デフォルトは4秒）
-        Configuration.timeout = 1000 * 60 * 3;
+        Configuration.timeout = 1000 * 3;
         // BaseURLを設定する
         Configuration.baseUrl = URL;
     }
@@ -29,8 +28,10 @@ public class UserInfoTest {
      * ユーザー登録と一覧表示
      */
     @Test
-    public void insertUserTest() {
+    public void crudUserTest() {
         open(Configuration.baseUrl);
+
+        // 登録
         $(By.className("main-menu")).$(By.name("link-UserInsert")).click();
         sleep(1000);
         $(By.name("user-id")).val("10");
@@ -40,31 +41,17 @@ public class UserInfoTest {
         sleep(1000);
         $(By.className("nav-bar")).$(By.name("link-SearchUser")).click();
         sleep(1000);
-    }
 
-    /**
-     * ユーザー検索
-     */
-    @Test
-    public void SearchUserTest() {
-        open(Configuration.baseUrl);
-        $(By.className("main-menu")).$(By.name("link-SearchUser")).click();
+        // 参照
+        $(By.className("nav-bar")).$(By.name("link-SearchUser")).click();
         sleep(1000);
         $(By.name("search-user-id")).val("10");
         $(By.name("search-user-name")).val("selenide-name");
         sleep(1000);
         $(By.name("do-search-button")).click();
         sleep(1000);
-    }
 
-    /**
-     * ユーザー更新
-     */
-    @Test
-    public void ModifyUserTest() {
-        open(Configuration.baseUrl);
-        $(By.className("main-menu")).$(By.name("link-SearchUser")).click();
-        sleep(1000);
+        // 更新
         $(By.name("user-info-10")).click();
         sleep(1000);
         $(By.name("modify-user-name")).val("update_user_name");
@@ -72,19 +59,14 @@ public class UserInfoTest {
         sleep(1000);
         $(By.className("nav-bar")).$(By.name("link-SearchUser")).click();
         sleep(1000);
-    }
 
-    /**
-     * ユーザー削除
-     */
-    @Test
-    public void DeleteUserTest() {
-        open(Configuration.baseUrl);
-        $(By.className("main-menu")).$(By.name("link-SearchUser")).click();
+        // 削除
+        $(By.className("nav-bar")).$(By.name("link-SearchUser")).click();
         sleep(1000);
         $(By.name("user-info-10")).click();
         sleep(1000);
         $(By.name("do-delete-button")).click();
         sleep(1000);
     }
+
 }
