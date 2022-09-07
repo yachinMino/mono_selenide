@@ -12,11 +12,13 @@ import static com.codeborne.selenide.Selenide.*;
 public class UserInfoTest {
 
     /** 接続パスを設定する **/
-    private static final String URL = "http://host.docker.internal:5172/";
+    private static final String URL = "http://host.docker.internal:5173/";
+    // private static final String URL = "http://localhost:5173/";
 
     @Before
     public void before() {
         System.setProperty("selenide.browser", "chrome");
+        // Configuration.headless = true;
         // タイムアウト時間を設定する（デフォルトは4秒）
         Configuration.timeout = 1000 * 60 * 3;
         // BaseURLを設定する
