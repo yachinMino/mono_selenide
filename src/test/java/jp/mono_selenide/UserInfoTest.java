@@ -43,7 +43,6 @@ public class UserInfoTest {
         sleep(1000);
 
         // 参照
-        $(By.className("nav-bar")).$(By.name("link-SearchUser")).click();
         sleep(1000);
         $(By.className("searching-option")).$(By.name("search-user-id")).val("10");
         $(By.className("searching-option")).$(By.name("search-user-name")).val("selenide-name");
@@ -52,6 +51,7 @@ public class UserInfoTest {
         sleep(1000);
 
         // 更新
+        sleep(1000);
         $(By.name("user-info-10")).click();
         sleep(1000);
         $(By.className("user-info-update")).$(By.name("modify-user-name")).val("update_user_name");
@@ -61,7 +61,6 @@ public class UserInfoTest {
         sleep(1000);
 
         // 削除
-        $(By.className("nav-bar")).$(By.name("link-SearchUser")).click();
         sleep(1000);
         $(By.name("user-info-10")).click();
         sleep(1000);
