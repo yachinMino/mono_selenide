@@ -43,7 +43,7 @@ public class UserInfoTest {
         sleep(1000);
 
         // 参照
-        sleep(1000);
+        sleep(5000);
         $(By.className("searching-option")).$(By.name("search-user-id")).val("10");
         $(By.className("searching-option")).$(By.name("search-user-name")).val("selenide-name");
         sleep(1000);
